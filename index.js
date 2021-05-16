@@ -3,16 +3,16 @@ const ejs = require("ejs")
 const _ = require("lodash");
 const bodyParser = require("body-parser")
 const app = express();
-
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 const arrPost = [];
 
-const homeContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-const aboutContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-const contactContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+const homeContent = "Hello there..!! This is your personal daily blog post website. You can compose as many you want and access them very easily.";
+const aboutContent = "My name is Sagar Aggarwal and this is my one of first project with Node and Express. Publish and Enjoy ✌";
+const contactContent = "You can contact me at ";
 
 app.get("/", (req, res) => {
     res.render("home", { HomeContent: homeContent, formArr:arrPost });
@@ -55,6 +55,6 @@ app.get("/post/:postName", (req,res) => {
     );
 });
 
-app.listen(8080, () => {
-    console.log("Listening at 8080");
+app.listen(port, () => {
+    console.log("Listening");
 });
