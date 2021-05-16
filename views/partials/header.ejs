@@ -14,24 +14,39 @@
 
   <style>
     a {
-      color: white;
+      color: black;
     }
+
     a:hover {
       color: black;
       font-weight: bold;
-    } 
+    }
+
+    span {
+      color: black;
+    }
   </style>
 
   <nav class="navbar" style="background-color: dimgray; ">
     <div class="container">
+
       <div class="navbar-header">
         <a class="navbar-brand" href="/">MyBlogs</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#targetId">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <ul class="nav navbar-nav">
-        <li><a href="/" active>Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/compose">Compose</a></li>
-      </ul>
+
+      <div class="collapse navbar-collapse" id="targetId">
+        <ul class="nav navbar-nav">
+          <li><a href="/" active>Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/compose">Compose</a></li>
+        </ul>
+      </div>
+
     </div>
   </nav>
