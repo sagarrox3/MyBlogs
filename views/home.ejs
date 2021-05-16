@@ -1,0 +1,26 @@
+<%- include('partials/header'); -%>
+
+    <style>
+
+    </style>
+
+    <div class="container">
+        <h1>Home</h1>
+        <p>
+            <%= HomeContent %>
+        </p>
+
+        <hr>
+
+        <% formArr.forEach(function(variable){ %>
+            <h1>
+                <%= variable.title %>
+                    </h2>
+                    <p>
+                        <%= variable.body.substring(0, 100) + "..." %>
+                        <a  style="color: black;" href="/post/:<%= variable.title %>">Read More</a> 
+                    </p>
+                    <% }); %>
+
+    </div>
+    <%- include('partials/footer'); -%>
